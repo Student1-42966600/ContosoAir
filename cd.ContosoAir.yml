@@ -26,11 +26,6 @@ steps:
     definition: '7'
     buildVersionToDownload: 'latest'
     targetPath: '$(Pipeline.Workspace)'
-
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
 - task: AzureResourceManagerTemplateDeployment@3
   inputs:
     deploymentScope: 'Resource Group'
@@ -38,7 +33,7 @@ steps:
     subscriptionId: 'fb1b2f37-715b-4bd7-805b-15dd9c80de18'
     action: 'Create Or Update Resource Group'
     resourceGroupName: '$(resourcegroup)'
-    location: 'Canada Central'
+    location: 'Canada East'
     templateLocation: 'Linked artifact'
     csmFile: '$(Pipeline.Workspace)/drop/Templates/azuredeploy.json'
     csmParametersFile: '$(Pipeline.Workspace)/drop/Templates/azuredeploy.parameters.json'
