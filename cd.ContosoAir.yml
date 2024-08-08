@@ -18,6 +18,13 @@ steps:
 - task: NodeTool@0
   inputs:
     versionSpec: '14.x'
+- task: DownloadPipelineArtifact@2
+  inputs:
+    buildType: 'specific'
+    project: '1de10542-a0e0-4623-887d-e8d3bb340aff'
+    definition: '7'
+    buildVersionToDownload: 'latest'
+    targetPath: '$(Pipeline.Workspace)'
 - task: AzureResourceManagerTemplateDeployment@3
   inputs:
     deploymentScope: 'Resource Group'
