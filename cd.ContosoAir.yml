@@ -12,7 +12,6 @@ resources:
 
 pool:
      name: Default
-     vmImage: 'ubuntu-18.04'
 
 
 steps:
